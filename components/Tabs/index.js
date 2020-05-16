@@ -16,7 +16,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     const data = 'Oh-no we hit a snag! check the console for details.';
     tabsContainer.append(topicMaker(data));
     console.log(err);
-})
+});
 
 const tabsContainer = document.querySelector('.topics');
 
@@ -28,4 +28,4 @@ const topicMaker = (data) => {
     tab.innerHTML = data;
 
     return tab;
-}
+};

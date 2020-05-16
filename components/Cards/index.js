@@ -24,8 +24,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     for (let [key, value] of Object.entries(response.data.articles)) {
         value.forEach(article => {
             cardContainer.append(cardMaker(article));
-        })
-    }
+        });
+    };
 })
 .catch(err => {
     cardContainer.innerHTML = 'Oh-no we hit a snag! Check the console log for details.';

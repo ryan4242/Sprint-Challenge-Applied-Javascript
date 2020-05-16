@@ -23,7 +23,7 @@ function Header() {
 
     date.innerHTML = 'MARCH 28, 2019';
     title.innerHTML = 'Lambda Times';
-    temp.innerHTML = '98\xB0'
+    temp.innerHTML = '98\xB0';
 
     header.append(date);
     header.append(title);
