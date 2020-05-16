@@ -11,7 +11,12 @@
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
     response.data.topics.forEach(tech => tabsContainer.append(topicMaker(tech)));
-});
+})
+.catch(err => {
+    const data = 'Oh-no we hit a snag! check the console for details.';
+    tabsContainer.append(topicMaker(data));
+    console.log(err);
+})
 
 const tabsContainer = document.querySelector('.topics');
 

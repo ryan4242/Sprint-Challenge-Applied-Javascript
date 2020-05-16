@@ -30,7 +30,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .catch(err => {
     cardContainer.innerHTML = 'Oh-no we hit a snag! Check the console log for details.';
     console.log(err);
-})
+});
 
 const cardMaker = (article) => {
     const card = document.createElement('div');
