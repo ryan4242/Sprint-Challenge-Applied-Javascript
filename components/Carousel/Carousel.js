@@ -45,7 +45,6 @@ const CarouselMaker = () => {
 
   image1.classList.add('selected');
   let currentImage = 0;
-
   const imageArray = [image1, image2, image3, image4];
 
   leftButton.addEventListener('click', () => {
