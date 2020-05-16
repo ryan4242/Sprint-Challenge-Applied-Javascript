@@ -3,7 +3,7 @@
 // Write a function that returns the markup you see below:
 //
 //  <div class="header">
-//    <span class="date">SMARCH 28, 2019</span>
+//    <span class="date">MARCH 28, 2019</span>
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
 //  </div>
@@ -21,7 +21,7 @@ function Header() {
     date.classList.add('date');
     temp.classList.add('temp');
 
-    date.innerHTML = 'SMARCH 28, 2019';
+    date.innerHTML = 'MARCH 28, 2019';
     title.innerHTML = 'Lambda Times';
     temp.innerHTML = '98\xB0'
 
