@@ -44,70 +44,35 @@ const CarouselMaker = () => {
   image4.src = './assets/carousel/turntable.jpeg';
 
   image1.classList.add('selected');
+  let currentImage = 0;
 
-  let currentImage = 1;
+  const imageArray = [image1, image2, image3, image4];
+  console.log(imageArray);
 
   leftButton.addEventListener('click', () => {
-    if(currentImage > 1) {
+    if(currentImage > 0) {
       currentImage -= 1;
+
+      let selectedImage = imageArray.filter(item => item.className != '');
+      selectedImage[0].classList.remove('selected');
     };
-    console.log(currentImage);
-    if(currentImage === 1) {
-      image1.classList.add('selected');
-      image2.classList.remove('selected');
-      image3.classList.remove('selected');
-      image4.classList.remove('selected');
-    } else if(currentImage === 2) {
-      image1.classList.remove('selected');
-      image2.classList.add('selected');
-      image3.classList.remove('selected');
-      image4.classList.remove('selected');
-    } else if(currentImage === 3) {
-      image1.classList.remove('selected');
-      image2.classList.remove('selected');
-      image3.classList.add('selected');
-      image4.classList.remove('selected');
-    } else {
-      image1.classList.remove('selected');
-      image2.classList.remove('selected');
-      image3.classList.remove('selected');
-      image4.classList.add('selected');
-    }
+    imageArray[currentImage].classList.add('selected');   
   });
 
   rightButton.addEventListener('click', () => {
-    if(currentImage < 4) {
+    if(currentImage < 3) {
       currentImage += 1;
+
+      let selectedImage = imageArray.filter(item => item.className != '');
+      selectedImage[0].classList.remove('selected');
     };
-    console.log(currentImage);
-    if(currentImage === 1) {
-      image1.classList.add('selected');
-      image2.classList.remove('selected');
-      image3.classList.remove('selected');
-      image4.classList.remove('selected');
-    } else if(currentImage === 2) {
-      image1.classList.remove('selected');
-      image2.classList.add('selected');
-      image3.classList.remove('selected');
-      image4.classList.remove('selected');
-    } else if(currentImage === 3) {
-      image1.classList.remove('selected');
-      image2.classList.remove('selected');
-      image3.classList.add('selected');
-      image4.classList.remove('selected');
-    } else {
-      image1.classList.remove('selected');
-      image2.classList.remove('selected');
-      image3.classList.remove('selected');
-      image4.classList.add('selected');
-    }
+
+    imageArray[currentImage].classList.add('selected');
   });
 
   return carousel; 
 };
 
 const carouselContainer = document.querySelector('.carousel-container');
-
-console.log(carouselContainer);
 
 carouselContainer.append(CarouselMaker());
