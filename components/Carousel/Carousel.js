@@ -47,7 +47,6 @@ const CarouselMaker = () => {
   let currentImage = 0;
 
   const imageArray = [image1, image2, image3, image4];
-  console.log(imageArray);
 
   leftButton.addEventListener('click', () => {
     if(currentImage > 0) {
