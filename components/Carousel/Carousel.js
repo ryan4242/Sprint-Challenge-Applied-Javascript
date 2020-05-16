@@ -17,3 +17,60 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const CarouselMaker = () => {
+  const carousel = document.createElement('div');
+  const leftButton = document.createElement('div');
+  const image1 = document.createElement('img');
+  const image2 = document.createElement('img');
+  const image3 = document.createElement('img');
+  const image4 = document.createElement('img');
+  const rightButton = document.createElement('div');
+
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-button');
+  rightButton.classList.add('right-button');
+
+  carousel.append(leftButton);
+  carousel.append(image1);
+  carousel.append(image2);
+  carousel.append(image3);
+  carousel.append(image4);
+  carousel.append(rightButton);
+  
+  image1.src = './assets/carousel/mountains.jpeg';
+  image2.src = './assets/carousel/computer.jpeg';
+  image3.src = './assets/carousel/trees.jpeg';
+  image4.src = './assets/carousel/turntable.jpeg';
+
+  image1.classList.add('selected');
+  let currentImage = 0;
+  const imageArray = [image1, image2, image3, image4];
+
+  leftButton.addEventListener('click', () => {
+    if(currentImage > 0) {
+      currentImage -= 1;
+
+      let selectedImage = imageArray.filter(item => item.className != '');
+      selectedImage[0].classList.remove('selected');
+    };
+    imageArray[currentImage].classList.add('selected');   
+  });
+
+  rightButton.addEventListener('click', () => {
+    if(currentImage < 3) {
+      currentImage += 1;
+
+      let selectedImage = imageArray.filter(item => item.className != '');
+      selectedImage[0].classList.remove('selected');
+    };
+
+    imageArray[currentImage].classList.add('selected');
+  });
+
+  return carousel; 
+};
+
+const carouselContainer = document.querySelector('.carousel-container');
+
+carouselContainer.append(CarouselMaker());
